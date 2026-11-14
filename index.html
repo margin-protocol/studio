@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant-TW" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARGIN PROTOCOL.｜頁邊協定</title>
+    <meta
+      name="description"
+      content="MARGIN PROTOCOL. 頁邊協定——結合文學、互動敘事、藝術設計、創意程式與數位產品的獨立創作工作室。Where stories meet systems."
+    />
+    <meta name="theme-color" content="#17191F" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Social：部署後請把 https://margin-protocol.pages.dev 換成你的正式網址 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MARGIN PROTOCOL." />
+    <meta property="og:title" content="MARGIN PROTOCOL.｜頁邊協定" />
+    <meta property="og:description" content="Where stories meet systems. 在文字與系統之間，創造另一種可能。" />
+    <meta property="og:url" content="https://margin-protocol.pages.dev/" />
+    <meta property="og:image" content="https://margin-protocol.pages.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MARGIN PROTOCOL.｜頁邊協定" />
+    <meta name="twitter:description" content="Where stories meet systems." />
+    <meta name="twitter:image" content="https://margin-protocol.pages.dev/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@400;600&display=swap"
+    />
+
+    <!-- 在畫面繪製前套用主題，避免閃爍。預設為夜間模式。 -->
+    <script>
+      try {
+        var t = localStorage.getItem('mp-theme')
+        if (t === 'light') {
+          document.documentElement.classList.remove('dark')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#EEE8DE')
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="padding:2rem;color:#F0EAE0;background:#17191F;font-family:sans-serif">
+        MARGIN PROTOCOL. 頁邊協定——此網站需要啟用 JavaScript 才能瀏覽檔案館。
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

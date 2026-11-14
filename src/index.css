@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* 以 <html class="dark"> 切換主題 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- 色彩變數 ---------- */
+:root {
+  /* 日間：舊紙張 */
+  --mp-bg: #eee8de;
+  --mp-fg: #1d1f26;
+  --mp-muted: #4f4c4a;
+  --mp-mist: #66577a;
+  --mp-bronze: #75685f;
+  --mp-card: #e5ddd0;
+  --mp-line: rgba(29, 31, 38, 0.14);
+  --mp-glow: rgba(102, 87, 122, 0.12);
+  color-scheme: light;
+}
+
+.dark {
+  /* 夜間（預設）：午夜檔案館 */
+  --mp-bg: #17191f;
+  --mp-fg: #f0eae0;
+  --mp-muted: #b9b2a8;
+  --mp-mist: #a99ab8;
+  --mp-bronze: #887b72;
+  --mp-card: #22222a;
+  --mp-line: rgba(240, 234, 224, 0.11);
+  --mp-glow: rgba(169, 154, 184, 0.14);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--mp-bg);
+  --color-fg: var(--mp-fg);
+  --color-muted: var(--mp-muted);
+  --color-mist: var(--mp-mist);
+  --color-bronze: var(--mp-bronze);
+  --color-card: var(--mp-card);
+  --color-line: var(--mp-line);
+
+  --font-serif: "Cormorant Garamond", "Noto Serif TC", "Source Han Serif TC", "Songti TC", serif;
+  --font-zh: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ---------- 基礎 ---------- */
+@layer base {
+  html {
+    background: var(--mp-bg);
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--mp-bg);
+    color: var(--mp-fg);
+    font-family: var(--font-sans);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::selection {
+    background: var(--mp-mist);
+    color: var(--mp-bg);
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--mp-mist);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+/* ---------- 視覺元件 ---------- */
+@layer components {
+  /* 紙張紋理：極淡的 SVG 雜訊 */
+  .paper-texture::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* 低對比網格 */
+  .faint-grid {
+    background-image:
+      linear-gradient(to right, var(--mp-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--mp-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  /* 檔案編號標籤 */
+  .file-code {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* 中文標題 */
+  .zh-title {
+    font-family: var(--font-zh);
+    letter-spacing: 0.08em;
+  }
+
+  /* 文章段落 */
+  .prose-mp p + p {
+    margin-top: 1.25em;
+  }
+}
+
+/* ---------- 減少動態 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
