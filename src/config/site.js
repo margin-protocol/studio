@@ -14,8 +14,8 @@ export const site = {
   description:
     '結合文學、互動敘事、藝術設計、創意程式與數位產品的獨立創作工作室。',
 
-  // 正式網址（部署後請改成你的網域，同時修改 index.html 內的 og:url / og:image）
-  url: 'https://margin-protocol.pages.dev',
+  // 正式網址（更換網域時，同時修改 index.html 內的 og:url / og:image）
+  url: 'https://margin-protocol.github.io/studio/',
 
   // 聯絡信箱（若改回 example.com，正式站會顯示「信箱即將開放」）
   email: 'marginprotocol.studio@gmail.com',

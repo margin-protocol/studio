@@ -9,7 +9,7 @@ export default function WorkCover({ work, className = '', large = false }) {
   if (work.cover) {
     return (
       <img
-        src={work.cover}
+        src={work.cover.startsWith('/') ? import.meta.env.BASE_URL + work.cover.slice(1) : work.cover}
         alt={`${work.title} 封面`}
         loading="lazy"
         decoding="async"

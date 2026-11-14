@@ -3,7 +3,7 @@
 > Where stories meet systems.
 > 在文字與系統之間，創造另一種可能。
 
-獨立創作工作室官方網站。React + Vite + Tailwind CSS v4 + Motion + Lucide，純前端、無後端、無金鑰，可直接部署到 Cloudflare Pages。
+獨立創作工作室官方網站。React + Vite + Tailwind CSS v4 + Motion + Lucide，純前端、無後端、無金鑰，透過 GitHub Actions 自動部署到 GitHub Pages。
 
 ---
 
@@ -104,47 +104,42 @@ npm run preview    # 在本機預覽打包後的版本
 
 **Logo**：符號標誌是依品牌規範重繪的向量檔 `src/components/LogoMark.jsx`，夜間為象牙色、日間自動改為檔案黑。品牌規範原圖放在 `docs/brand/brand-sheet-v1.jpg`。favicon、App 圖示、社群分享圖在 `public/`。
 
-**正式網址**：部署後把 `src/config/site.js` 的 `url`，以及 `index.html` 裡的 `og:url`、`og:image`、`twitter:image` 改成你的網域。
+**正式網址**：目前為 GitHub Pages 網址；更換時修改 `src/config/site.js` 的 `url` 與 `index.html` 的分享網址（詳見第 6 節）。
 
 **未完成的作品**：`status` 用 `concept`、`concept-dev`、`development` 或 `reserved`，`releaseDate` 填 `null`，`linkKey` 對應的網址填 `null`，詳情頁會顯示「外部連結尚未開放」。
 
-## 6. 部署：GitHub → Cloudflare Pages
+## 6. 部署：GitHub Pages
 
-### 6-1 推上 GitHub
+網址：**https://margin-protocol.github.io/studio/**
 
-1. 在 GitHub 建立新的 repository，例如 `margin-protocol-site`（不用勾選 README）。
-2. 在專案資料夾執行：
+部署已自動化（`.github/workflows/deploy.yml`）：每次推到 `main`，GitHub Actions 會自動安裝套件、打包並發布，不需要手動上傳任何檔案。
+
+### 第一次啟用（只要做一次）
+
+1. 打開 repo → **Settings** → 左側 **Pages**。
+2. **Build and deployment → Source** 選 **GitHub Actions**。
+3. 到 **Actions** 分頁，點最新一次的「Deploy to GitHub Pages」→ 右上 **Re-run all jobs**（或推一次新的 commit）。
+4. 綠色勾勾出現後，打開上面的網址即可。
+
+### 之後更新
 
 ```bash
-git init
 git add .
-git commit -m "init: MARGIN PROTOCOL website"
-git branch -M main
-git remote add origin https://github.com/<你的帳號>/margin-protocol-site.git
-git push -u origin main
+git commit -m "更新內容"
+git push
 ```
 
-### 6-2 連接 Cloudflare Pages
+約 1–2 分鐘後網站自動更新。進度可在 Actions 分頁查看。
 
-1. 登入 Cloudflare 後台 →「Workers & Pages」→「Create」→「Pages」→「Connect to Git」。
-2. 授權 GitHub，選擇剛剛的 repository。
-3. Build 設定：
+### 網址路徑說明
 
-| 欄位 | 值 |
-|---|---|
-| Framework preset | `React (Vite)` 或 `None` |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| 環境變數（選填） | `NODE_VERSION` = `22` |
+- 因為網站在 `/studio/` 底下，`vite.config.js` 的 `base` 設為 `'/studio/'`。
+- 若 repo 改名為 `margin-protocol.github.io`，或綁定自訂網域，請把 `base` 改成 `'/'`，並更新 `src/config/site.js` 的 `url` 與 `index.html` 的 `og:url`、`og:image`、`twitter:image`。
+- 單頁應用程式路由：打包時會把 `index.html` 複製成 `404.html`，直接開啟或重新整理 `/studio/archive/off-page` 也能正常顯示。
 
-4. 按「Save and Deploy」。完成後會得到 `https://<專案名>.pages.dev` 網址。
-5. 之後每次 `git push` 到 `main`，Cloudflare 會自動重新部署。
+### 其他平台（選用）
 
-> **單頁應用程式路由**：本專案沒有 `404.html`，Cloudflare Pages 會自動把 `/archive/off-page` 這類網址導回 `index.html`，由 React Router 處理，所以直接開啟或重新整理作品頁都不會 404。不需要額外的 `_redirects`。
-
-### 6-3 自訂網域（選用）
-
-Pages 專案 →「Custom domains」→「Set up a custom domain」，依指示設定 DNS。完成後記得更新 `site.js` 與 `index.html` 裡的網址。
+也可部署到 Cloudflare Pages：連接此 repo，Build command `npm run build`、Output directory `dist`，並把 `base` 改成 `'/'`。
 
 ## 7. 品質與無障礙
 

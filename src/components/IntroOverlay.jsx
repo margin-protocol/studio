@@ -20,7 +20,9 @@ function shouldShow() {
   // 系統開啟「減少動態」時直接略過進場動畫
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return false
   // 只在首頁首次進入時播放；直接開啟作品連結的訪客不需要等待
-  return window.location.pathname === '/'
+  const home = import.meta.env.BASE_URL // 例如 '/studio/'
+  const path = window.location.pathname
+  return path === home || path === home.replace(/\/$/, '')
 }
 
 /**
