@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* ---------- 字體 ----------
+ * 預設：中文用思源宋體。
+ * 加上 class="kai" 的區塊（作品卡片、實驗室紀錄）：中文改用霞鶩文楷。
+ * 英文標題一律 Cormorant Garamond，英文小字一律 Inter。
+ */
+:root {
+  --mp-zh-face: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU";
+}
+.kai {
+  --mp-zh-face: "LXGW WenKai TC", "Noto Serif TC", "Songti TC";
+}
+:root,
+.kai {
+  --mp-serif: "Cormorant Garamond", var(--mp-zh-face), serif;
+  --mp-zh: var(--mp-zh-face), serif;
+  --mp-sans: "Inter", "Helvetica Neue", Arial, var(--mp-zh-face), serif;
+  --mp-mono: "JetBrains Mono", ui-monospace, Menlo, var(--mp-zh-face), monospace;
+}
+.kai {
+  font-family: var(--mp-sans);
+}
+
 /* 以 <html class="dark"> 切換主題 */
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -41,11 +63,10 @@
   --color-card: var(--mp-card);
   --color-line: var(--mp-line);
 
-  --font-serif: "Cormorant Garamond", "Noto Serif TC", "Source Han Serif TC", "Songti TC", serif;
-  --font-zh: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
-  /* 英文用 Inter，中文一律落到思源宋體（Inter 沒有中文字，瀏覽器會自動改用下一個字體） */
-  --font-sans: "Inter", "Helvetica Neue", Arial, "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Serif TC", "Songti TC", monospace;
+  --font-serif: var(--mp-serif);
+  --font-zh: var(--mp-zh);
+  --font-sans: var(--mp-sans);
+  --font-mono: var(--mp-mono);
 }
 
 /* ---------- 基礎 ---------- */
@@ -60,7 +81,7 @@
     min-height: 100vh;
     background: var(--mp-bg);
     color: var(--mp-fg);
-    font-family: var(--font-sans);
+    font-family: var(--mp-sans);
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -107,7 +128,7 @@
 
   /* 小字標籤（檔案編號、分類、狀態、按鈕文字）——統一使用正文無襯線字 */
   .file-code {
-    font-family: var(--font-sans);
+    font-family: var(--mp-sans);
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -115,7 +136,7 @@
 
   /* 中文標題 */
   .zh-title {
-    font-family: var(--font-zh);
+    font-family: var(--mp-zh);
     letter-spacing: 0.08em;
   }
 
