@@ -8,7 +8,7 @@ export default function PageHeading({ code, title, titleZh, children }) {
           <span className="font-serif text-5xl leading-none tracking-[0.06em] sm:text-7xl">{title}</span>
           <span className="zh-title text-xl text-muted sm:text-2xl">{titleZh}</span>
         </h1>
-        {children && <div className="mt-6 max-w-2xl text-muted">{children}</div>}
+        {children && <div className="mt-6 max-w-2xl font-zh text-lg tracking-[0.04em] text-muted">{children}</div>}
       </div>
     </header>
   )
