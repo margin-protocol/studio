@@ -50,7 +50,7 @@ export default function Contact() {
       )}
 
       <section aria-labelledby="services-title" className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <h2 id="services-title" className="file-code text-bronze">SERVICES ／ 委託項目</h2>
+        <h2 id="services-title" className="file-code text-bronze">SERVICES</h2>
         <ul className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2">
           {services.map((s, i) => (
             <motion.li
@@ -69,7 +69,7 @@ export default function Contact() {
                 {ready && (
                   <a
                     href={mailto(`[${s.title}] 來自 MARGIN PROTOCOL. 網站`)}
-                    className="file-code mt-6 inline-flex items-center gap-1.5 text-mist hover:text-fg"
+                    className="ui-zh mt-6 inline-flex items-center gap-1.5 text-mist hover:text-fg"
                   >
                     以此主旨來信 <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
                   </a>
@@ -84,7 +84,7 @@ export default function Contact() {
         <div className="relative overflow-hidden border border-line bg-card/50 px-6 py-14 text-center">
           <div className="faint-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
           <div className="relative">
-            <h2 id="mail-title" className="file-code text-bronze">E-MAIL ／ 電子郵件</h2>
+            <h2 id="mail-title" className="file-code text-bronze">E-MAIL</h2>
             {ready ? (
               <>
                 <p className="mt-5 font-serif text-2xl tracking-wide sm:text-3xl">{site.email}</p>
@@ -93,7 +93,7 @@ export default function Contact() {
                   className="mt-8 inline-flex items-center gap-3 border border-mist/70 px-6 py-3 transition-colors hover:bg-mist hover:text-bg"
                 >
                   <Mail size={16} strokeWidth={1.5} aria-hidden="true" />
-                  <span className="file-code">寫信給頁邊協定</span>
+                  <span className="ui-zh">寫信給頁邊協定</span>
                 </a>
               </>
             ) : (

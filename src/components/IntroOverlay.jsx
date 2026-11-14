@@ -99,7 +99,7 @@ export default function IntroOverlay() {
             onClick={dismiss}
             className="file-code absolute bottom-8 right-8 border border-line px-4 py-2 text-muted transition-colors hover:border-mist hover:text-fg"
           >
-            略過 SKIP
+            SKIP
           </button>
         </motion.div>
       )}

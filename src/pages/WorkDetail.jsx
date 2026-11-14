@@ -41,7 +41,7 @@ export default function WorkDetail() {
   return (
     <Page>
       <div className="mx-auto max-w-5xl px-5 pt-10 sm:px-8">
-        <Link to="/archive" className="file-code inline-flex items-center gap-2 text-muted hover:text-fg">
+        <Link to="/archive" className="ui-zh inline-flex items-center gap-2 text-muted hover:text-fg">
           <ArrowLeft size={14} strokeWidth={1.5} aria-hidden="true" /> 返回檔案館
         </Link>
       </div>
@@ -75,7 +75,7 @@ export default function WorkDetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <h2 className="file-code mb-4 text-bronze">DESCRIPTION ／ 詳細介紹</h2>
+              <h2 className="file-code mb-4 text-bronze">DESCRIPTION</h2>
               {work.description.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -114,7 +114,7 @@ export default function WorkDetail() {
                     rel="noopener noreferrer"
                     className="group inline-flex w-full items-center justify-between border border-fg/80 bg-fg px-5 py-3 text-bg transition-colors hover:bg-transparent hover:text-fg"
                   >
-                    <span className="file-code">前往作品網站</span>
+                    <span className="ui-zh">前往作品網站</span>
                     <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                     <span className="sr-only">（另開新視窗）</span>
                   </a>
@@ -132,16 +132,16 @@ export default function WorkDetail() {
       <nav aria-label="其他檔案" className="mx-auto mt-12 grid max-w-5xl gap-4 px-5 sm:grid-cols-2 sm:px-8">
         {prev ? (
           <Link to={`/archive/${prev.id}`} className="group border border-line p-5 hover:border-mist/60">
-            <span className="file-code inline-flex items-center gap-2 text-muted">
-              <ArrowLeft size={14} strokeWidth={1.5} aria-hidden="true" /> 上一份 · {prev.code}
+            <span className="ui-zh inline-flex items-center gap-2 text-muted">
+              <ArrowLeft size={14} strokeWidth={1.5} aria-hidden="true" /> 上一份 · <span className="file-code">{prev.code}</span>
             </span>
             <span className="mt-2 block font-serif text-xl">{prev.title}</span>
           </Link>
         ) : <span />}
         {next && (
           <Link to={`/archive/${next.id}`} className="group border border-line p-5 text-right hover:border-mist/60">
-            <span className="file-code inline-flex items-center gap-2 text-muted">
-              下一份 · {next.code} <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
+            <span className="ui-zh inline-flex items-center gap-2 text-muted">
+              下一份 · <span className="file-code">{next.code}</span> <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
             </span>
             <span className="mt-2 block font-serif text-xl">{next.title}</span>
           </Link>

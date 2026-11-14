@@ -10,7 +10,7 @@ export default function WorkCard({ work, headingLevel = 'h3' }) {
   const cat = getCategory(work.category)
 
   return (
-    <article className="kai group relative h-full">
+    <article className="group relative h-full">
       {/* 索引標籤 */}
       <div
         className="file-code relative z-10 ml-4 inline-block border border-b-0 border-line bg-card px-3 pb-1 pt-1.5 text-bronze transition-all duration-300 group-hover:-translate-y-0.5 group-hover:text-mist group-focus-within:text-mist"
@@ -41,7 +41,7 @@ export default function WorkCard({ work, headingLevel = 'h3' }) {
           <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{work.summary}</p>
 
           <p className="file-code mt-5 inline-flex items-center gap-1.5 text-muted transition-colors group-hover:text-fg">
-            開啟檔案
+            OPEN FILE
             <ArrowUpRight size={14} strokeWidth={1.5} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
           </p>
         </div>

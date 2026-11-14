@@ -68,7 +68,7 @@ export default function Archive() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => update('cat', f.id)}
-                  className={`file-code border px-3 py-1.5 transition-colors ${
+                  className={`ui-zh border px-3 py-1.5 transition-colors ${
                     active ? 'border-mist bg-mist text-bg' : 'border-line text-muted hover:border-mist/60 hover:text-fg'
                   }`}
                 >
@@ -105,7 +105,7 @@ export default function Archive() {
       </section>
 
       <section aria-label="作品列表" className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-        <p className="file-code mb-8 text-muted" aria-live="polite">
+        <p className="ui-zh mb-8 text-muted" aria-live="polite">
           共 {results.length} 份檔案
         </p>
 
@@ -133,7 +133,7 @@ export default function Archive() {
             <button
               type="button"
               onClick={() => setParams(new URLSearchParams(), { replace: true })}
-              className="file-code mt-6 border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg"
+              className="ui-zh mt-6 border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg"
             >
               清除所有條件
             </button>

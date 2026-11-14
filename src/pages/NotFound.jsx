@@ -12,10 +12,10 @@ export default function NotFound() {
         <h1 className="mt-6 font-serif text-6xl tracking-wide">NULL</h1>
         <p className="zh-title mt-4 text-lg text-muted">此檔案不存在，或已被移出檔案館。</p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link to="/" className="file-code inline-flex items-center gap-2 border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg">
+          <Link to="/" className="ui-zh inline-flex items-center gap-2 border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg">
             <ArrowLeft size={14} strokeWidth={1.5} aria-hidden="true" /> 回到入口
           </Link>
-          <Link to="/archive" className="file-code border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg">
+          <Link to="/archive" className="ui-zh border border-line px-4 py-2 text-muted hover:border-mist hover:text-fg">
             前往檔案館
           </Link>
         </div>

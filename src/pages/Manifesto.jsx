@@ -58,7 +58,7 @@ export default function Manifesto() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1.2 }}
         >
-          <span className="file-code text-bronze">PREAMBLE ／ 序</span>
+          <span className="file-code text-bronze">PREAMBLE</span>
           <p className="zh-title mt-6 text-xl leading-relaxed sm:text-2xl md:whitespace-nowrap">{site.motto}</p>
           <footer className="mt-6 font-serif text-lg italic text-muted">{site.taglineEn}</footer>
         </motion.blockquote>
@@ -91,7 +91,7 @@ export default function Manifesto() {
           ))}
         </ol>
 
-        <p className="file-code mt-28 text-center text-muted">— 本協定於每次閱讀時生效 —</p>
+        <p className="ui-zh mt-28 text-center text-muted">— 本協定於每次閱讀時生效 —</p>
       </section>
     </Page>
   )

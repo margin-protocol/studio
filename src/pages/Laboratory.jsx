@@ -29,11 +29,11 @@ export default function Laboratory() {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
-                <article className="kai border border-line bg-card/40">
+                <article className="border border-line bg-card/40">
                   <header className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-line px-5 py-3">
                     <span className="file-code text-mist">{exp.code}</span>
                     <span className="file-code text-line" aria-hidden="true">//</span>
-                    <span className="file-code text-muted">{exp.kind}</span>
+                    <span className="ui-zh text-muted">{exp.kind}</span>
                     <span className="ml-auto">
                       <StatusBadge status={exp.status} />
                     </span>
@@ -48,7 +48,7 @@ export default function Laboratory() {
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="file-code mt-5 inline-flex items-center gap-1.5 text-mist hover:text-fg"
+                          className="ui-zh mt-5 inline-flex items-center gap-1.5 text-mist hover:text-fg"
                         >
                           查看原型 <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
                           <span className="sr-only">（另開新視窗）</span>

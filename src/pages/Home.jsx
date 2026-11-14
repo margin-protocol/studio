@@ -65,10 +65,11 @@ export default function Home() {
                 to="/archive"
                 className="group inline-flex items-center gap-3 border border-fg/80 bg-fg px-6 py-3 text-bg transition-colors hover:bg-transparent hover:text-fg"
               >
-                <span className="file-code">進入檔案館 ENTER ARCHIVE</span>
+                <span className="ui-zh">進入檔案館</span>
+                <span className="file-code">ENTER ARCHIVE</span>
                 <ArrowRight size={16} strokeWidth={1.5} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
-              <Link to="/manifesto" className="file-code border-b border-line pb-1 text-muted transition-colors hover:border-mist hover:text-fg">
+              <Link to="/manifesto" className="ui-zh border-b border-line pb-1 text-muted transition-colors hover:border-mist hover:text-fg">
                 閱讀宣言 →
               </Link>
             </motion.div>
@@ -96,7 +97,7 @@ export default function Home() {
             <p className="file-code text-bronze">SELECTED FILES</p>
             <h2 id="featured-title" className="zh-title mt-2 text-3xl">精選檔案</h2>
           </div>
-          <Link to="/archive" className="file-code inline-flex items-center gap-2 text-muted hover:text-fg">
+          <Link to="/archive" className="ui-zh inline-flex items-center gap-2 text-muted hover:text-fg">
             查看全部 <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>
@@ -144,7 +145,7 @@ export default function Home() {
               className="mt-8 inline-flex items-center gap-3 border border-mist/70 px-6 py-3 text-fg transition-colors hover:bg-mist hover:text-bg"
             >
               <Mail size={16} strokeWidth={1.5} aria-hidden="true" />
-              <span className="file-code">聯絡與委託</span>
+              <span className="ui-zh">聯絡與委託</span>
             </Link>
           </div>
         </motion.div>

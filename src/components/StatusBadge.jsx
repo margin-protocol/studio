@@ -12,7 +12,7 @@ export default function StatusBadge({ status, showZh = true }) {
     <span className="file-code inline-flex items-center gap-2 text-muted">
       <span className={`inline-block h-1.5 w-1.5 rounded-full ${dot[s.tone]}`} aria-hidden="true" />
       <span>{s.en}</span>
-      {showZh && <span className="normal-case tracking-normal">／{s.label}</span>}
+      {showZh && <span className="ui-zh normal-case">／{s.label}</span>}
     </span>
   )
 }
