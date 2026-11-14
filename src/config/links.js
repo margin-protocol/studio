@@ -17,8 +17,10 @@ export const links = {
   null: 'https://margin-protocol.github.io/null/',
   seventhRegistry: 'https://margin-protocol.github.io/seventh-marriage-registry/',
 
-  // 手機小工具、電腦桌寵：目前沒有公開頁面，有網址時填入即可
-  phoneWidget: null,
+  // 手機小工具介紹在岔頁的工具頁
+  phoneWidget: 'https://margin-protocol.github.io/Off-Page/tools.html#tool-widget',
+
+  // 電腦桌寵：目前沒有公開頁面，有網址時填入即可
   desktopPet: null,
 }
 
