@@ -6,7 +6,7 @@
   "description": "MARGIN PROTOCOL. 頁邊協定 — official studio website",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-seo.mjs",
     "preview": "vite preview"
   },
   "engines": {

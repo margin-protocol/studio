@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://margin-protocol.github.io/studio/sitemap.xml

@@ -41,7 +41,8 @@
 
 ```
 margin-protocol/
-├─ index.html                 SEO／Open Graph metadata、字體、防閃爍主題腳本
+├─ index.html                 字體、防閃爍主題腳本（SEO 區塊打包後自動產生）
+├─ scripts/build-seo.mjs      ★ 打包後產生各頁 HTML、結構化資料、sitemap.xml、llms.txt、404.html
 ├─ package.json
 ├─ vite.config.js
 ├─ .nvmrc                     Node 22
@@ -134,8 +135,14 @@ git push
 ### 網址路徑說明
 
 - 因為網站在 `/studio/` 底下，`vite.config.js` 的 `base` 設為 `'/studio/'`。
-- 若 repo 改名為 `margin-protocol.github.io`，或綁定自訂網域，請把 `base` 改成 `'/'`，並更新 `src/config/site.js` 的 `url` 與 `index.html` 的 `og:url`、`og:image`、`twitter:image`。
-- 單頁應用程式路由：打包時會把 `index.html` 複製成 `404.html`，直接開啟或重新整理 `/studio/archive/off-page` 也能正常顯示。
+- 若 repo 改名為 `margin-protocol.github.io`，或綁定自訂網域，請把 `base` 改成 `'/'`，並更新 `src/config/site.js` 的 `url`（分享卡與 sitemap 會自動跟著改）與 `public/robots.txt` 的 Sitemap 網址。
+- 單頁應用程式路由：`npm run build` 會在打包後執行 `scripts/build-seo.mjs`，替每一頁（含每件作品）產生自己的 `index.html`，直接開啟或重新整理 `/studio/archive/off-page/` 會是正常的 200 頁面；其他網址由帶 `noindex` 的 `404.html` 接手。
+
+### SEO
+
+- 每一頁都有自己的標題、簡介、canonical、Open Graph／Twitter 分享卡，以及 JSON-LD 結構化資料（Organization、WebSite、CreativeWork、BreadcrumbList）。
+- 新增作品只要改 `src/data/works.js`，頁面、sitemap.xml、llms.txt 都會自動更新。
+- 建議到 [Google Search Console](https://search.google.com/search-console) 新增「網址前置字元」資源 `https://margin-protocol.github.io/studio/`，再提交 `sitemap.xml`。（`robots.txt` 不在網域根目錄，搜尋引擎不會自動讀到，所以要手動提交一次。）
 
 ### 其他平台（選用）
 
@@ -156,5 +163,3 @@ git push
 - 作品詳情加入圖片集、製作紀錄
 - 實驗室各筆紀錄加入日期與獨立頁面
 - 英文版介面（i18n）
-- `sitemap.xml` 自動產生
-- 預先產生靜態 HTML（prerender），讓社群預覽能讀到各作品頁的專屬標題

@@ -25,8 +25,6 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
-      # 單頁應用程式：讓 /studio/archive/xxx 等網址直接開啟或重新整理時不會 404
-      - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
