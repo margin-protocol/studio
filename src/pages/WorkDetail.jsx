@@ -27,6 +27,7 @@ export default function WorkDetail() {
 
   const cat = getCategory(work.category)
   const url = getLink(work.linkKey)
+  const playUrl = getLink(work.playKey)
   const index = works.findIndex((w) => w.id === work.id)
   const prev = works[index - 1]
   const next = works[index + 1]
@@ -122,6 +123,18 @@ export default function WorkDetail() {
                   <p className="border border-dashed border-line px-5 py-3 text-sm text-muted">
                     <span className="file-code mr-2 text-bronze">LINK</span>外部連結尚未開放
                   </p>
+                )}
+                {playUrl && (
+                  <a
+                    href={playUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-3 inline-flex w-full items-center justify-between border border-mist/70 px-5 py-3 text-fg transition-colors hover:border-mist hover:bg-mist/15"
+                  >
+                    <span className="ui-zh">前往遊玩</span>
+                    <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                    <span className="sr-only">（另開新視窗，前往 ChelizAI）</span>
+                  </a>
                 )}
               </div>
             </aside>

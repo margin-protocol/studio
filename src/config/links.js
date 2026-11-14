@@ -21,6 +21,11 @@ export const links = {
   // 手機小工具介紹在岔頁的工具頁
   phoneWidget: 'https://margin-protocol.github.io/Off-Page/tools.html#tool-widget',
 
+  // ChelizAI 遊玩連結（作品資料用 playKey 指到這裡，沒有就不顯示「前往遊玩」）
+  playNull: 'https://www.cheliz.ai/zh-hant/gallery?utm_source=web_share&utm_medium=share_play&phandle=750s7iv0eh8qu8s1&enter_from=poster&invite_code=55RWFA',
+  playSeventhRegistry: 'https://www.cheliz.ai/zh-hant/gallery?utm_source=web_share&utm_medium=share_play&phandle=u3sqzdoomb0pj924&enter_from=poster&invite_code=55RWFA',
+  playTheUnfinishedLove: 'https://www.cheliz.ai/play/bxtmufehosxalw26?utm_source=web_share&utm_medium=share_studio&enter_from=studio_share&invite_code=55RWFA',
+
   // 電腦桌寵：目前沒有公開頁面，有網址時填入即可
   desktopPet: null,
 }

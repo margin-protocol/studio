@@ -15,6 +15,7 @@
  *   description  詳細介紹，每個字串一段
  *   tags         關鍵字，會被搜尋
  *   linkKey      外部連結代號，網址寫在 src/config/links.js
+ *   playKey      遊玩連結代號（可省略），有填才會顯示「前往遊玩」
  *   cover        封面圖片路徑，例如 '/covers/little-days.webp'（放在 public/covers/）
  *                填 null 時使用程式產生的幾何封面
  *   motif        幾何封面圖樣：'calendar' | 'pages' | 'lattice' | 'void' | 'door' | 'phone' | 'chairs'
@@ -93,6 +94,7 @@ export const works = [
     ],
     tags: ['科幻', '互動敘事', '系統', 'experimental'],
     linkKey: 'null',
+    playKey: 'playNull',
     cover: null,
     motif: 'void',
     featured: true,
@@ -112,6 +114,7 @@ export const works = [
     ],
     tags: ['冥府', '互動敘事', '奇幻', '多世界', 'narrative'],
     linkKey: 'seventhRegistry',
+    playKey: 'playSeventhRegistry',
     cover: null,
     motif: 'door',
     featured: true,
@@ -152,6 +155,7 @@ export const works = [
     ],
     tags: ['婚姻', '離婚協商', '互動敘事', 'AI 互動', 'ChelizAI', 'narrative'],
     linkKey: 'theUnfinishedLove',
+    playKey: 'playTheUnfinishedLove',
     cover: null,
     motif: 'chairs',
     featured: true,
