@@ -17,9 +17,8 @@ export const site = {
   // 正式網址（部署後請改成你的網域，同時修改 index.html 內的 og:url / og:image）
   url: 'https://margin-protocol.pages.dev',
 
-  // 聯絡信箱：目前是 placeholder。
-  // 只要仍是 example.com，正式站會顯示「信箱即將開放」，不會產生無效的寄信按鈕。
-  email: 'your-email@example.com',
+  // 聯絡信箱（若改回 example.com，正式站會顯示「信箱即將開放」）
+  email: 'marginprotocol.studio@gmail.com',
 
   since: 2026,
 }

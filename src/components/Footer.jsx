@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { navItems } from './navigation.js'
 import { site } from '../config/site.js'
+import LogoMark from './LogoMark.jsx'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,6 +11,7 @@ export default function Footer() {
     <footer className="mt-24 border-t border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr]">
         <div>
+          <LogoMark className="mb-5 h-14 w-auto" />
           <p className="font-serif text-2xl tracking-[0.12em]">
             MARGIN PROTOCOL<span className="text-mist">.</span>
           </p>

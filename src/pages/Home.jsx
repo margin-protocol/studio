@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { ArrowRight, Mail } from 'lucide-react'
 
 import Page from '../components/Page.jsx'
-import DoorFrame from '../components/DoorFrame.jsx'
+import LogoMark from '../components/LogoMark.jsx'
 import WorkCard from '../components/WorkCard.jsx'
 import { navItems } from '../components/navigation.js'
 import { works } from '../data/works.js'
@@ -75,8 +75,18 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[190px] sm:max-w-[260px] md:max-w-[340px]">
-            <DoorFrame className="h-auto w-full" />
+          <div className="relative mx-auto w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px]">
+            {/* 門後微光 */}
+            <motion.div
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[140%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+              style={{ background: 'radial-gradient(ellipse at center, var(--mp-glow), transparent 65%)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 2 }}
+              aria-hidden="true"
+            />
+            <LogoMark animated className="relative h-auto w-full" />
+            <p className="file-code mt-6 text-center text-bronze" aria-hidden="true">ACCESS / 00</p>
           </div>
         </div>
       </section>

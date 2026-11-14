@@ -29,7 +29,7 @@
 | 品牌標題 | `MARGIN / PROTOCOL.` 兩行大型 Serif（Cormorant Garamond），句點以霧紫標記，逐行上浮進場 |
 | 中文 | 「頁邊協定」使用思源宋體（Noto Serif TC），加大字距 |
 | 標語 | 左側一條霧紫細線，英文斜體 Serif、中文宋體，像書頁邊的註記 |
-| 主視覺 | 幾何門框 SVG：外框、圓角內框、門縫一道微光、地面淡淡的光暈。線條依序描繪出來（pathLength 動畫） |
+| 主視覺 | 品牌符號標誌：象牙主板與霧紫側板依序浮現，背後一圈門後微光 |
 | 紋理 | 全站極淡紙張雜訊 + 漸隱的低對比網格 |
 | 檔案感 | 所有區塊以 Monospace 檔案編號標示（FILE 00、MP-001、LAB-01），作品卡片頂端有索引標籤 |
 | 留白 | 大量垂直留白、窄欄文字，閱讀優先 |
@@ -47,6 +47,7 @@ margin-protocol/
 ├─ .nvmrc                     Node 22
 ├─ public/
 │  ├─ favicon.svg
+│  ├─ apple-touch-icon.png
 │  ├─ og-image.png            社群分享圖（1200×630）
 │  └─ robots.txt
 └─ src/
@@ -71,7 +72,7 @@ margin-protocol/
    │  ├─ WorkCard.jsx         作品卡片
    │  ├─ WorkCover.jsx        作品封面（圖片或程式產生的幾何封面）
    │  ├─ StatusBadge.jsx      開發狀態
-   │  └─ DoorFrame.jsx        首頁門框主視覺
+   │  └─ LogoMark.jsx         品牌符號標誌（首頁主視覺、導覽列、頁尾）
    └─ pages/
       ├─ Home.jsx  Archive.jsx  WorkDetail.jsx
       ├─ Laboratory.jsx  Manifesto.jsx  Contact.jsx  NotFound.jsx
@@ -99,7 +100,9 @@ npm run preview    # 在本機預覽打包後的版本
 
 **更改外部網址**（例如 GitHub 帳號改名）：只改 `src/config/links.js`。
 
-**設定聯絡信箱**：修改 `src/config/site.js` 的 `email`。只要仍是 `@example.com`，正式網站會顯示「聯絡信箱即將開放」，不會出現點了沒反應的按鈕。
+**聯絡信箱**：`src/config/site.js` 的 `email`（目前為 marginprotocol.studio@gmail.com）。
+
+**Logo**：符號標誌是依品牌規範重繪的向量檔 `src/components/LogoMark.jsx`，夜間為象牙色、日間自動改為檔案黑。品牌規範原圖放在 `docs/brand/brand-sheet-v1.jpg`。favicon、App 圖示、社群分享圖在 `public/`。
 
 **正式網址**：部署後把 `src/config/site.js` 的 `url`，以及 `index.html` 裡的 `og:url`、`og:image`、`twitter:image` 改成你的網域。
 

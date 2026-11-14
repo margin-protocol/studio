@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { navItems } from './navigation.js'
 import { useTheme } from '../hooks/useTheme.js'
+import LogoMark from './LogoMark.jsx'
 
 function ThemeToggle() {
   const { theme, toggle } = useTheme()
@@ -39,8 +40,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" className="group flex items-baseline gap-3" aria-label="MARGIN PROTOCOL. 回到首頁">
-          <span className="font-serif text-xl tracking-[0.12em] text-fg">
+        <Link to="/" className="group flex items-center gap-3" aria-label="MARGIN PROTOCOL. 回到首頁">
+          <LogoMark className="h-8 w-auto transition-transform duration-500 group-hover:-translate-y-0.5" />
+          <span className="font-serif text-lg tracking-[0.12em] text-fg sm:text-xl">
             MARGIN PROTOCOL<span className="text-mist">.</span>
           </span>
           <span className="zh-title hidden text-xs text-muted sm:inline">頁邊協定</span>

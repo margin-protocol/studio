@@ -14,6 +14,7 @@
   --mp-card: #e5ddd0;
   --mp-line: rgba(29, 31, 38, 0.14);
   --mp-glow: rgba(102, 87, 122, 0.12);
+  --mp-logo-main: #22222a;
   color-scheme: light;
 }
 
@@ -27,6 +28,7 @@
   --mp-card: #22222a;
   --mp-line: rgba(240, 234, 224, 0.11);
   --mp-glow: rgba(169, 154, 184, 0.14);
+  --mp-logo-main: #eae4da;
   color-scheme: dark;
 }
 

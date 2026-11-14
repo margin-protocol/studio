@@ -10,11 +10,8 @@
 export const links = {
   littleDays: 'https://little-days-793.pages.dev/',
 
-  // ⚠ GitHub 帳號改名後，github.io 網址會跟著改變（舊網址不會自動轉址）。
-  //   例如帳號改成 margin-protocol、repo 為 Off-Page，網址會變成
-  //   https://margin-protocol.github.io/Off-Page/
-  //   請確認後修改這一行。
-  offPage: 'https://xia-mumu.github.io/Off-Page/',
+  // GitHub 帳號 margin-protocol（2026-11 由 xia-mumu 改名）
+  offPage: 'https://margin-protocol.github.io/Off-Page/',
 
   lexnote: null,
   null: null,
