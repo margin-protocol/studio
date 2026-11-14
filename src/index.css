@@ -43,8 +43,9 @@
 
   --font-serif: "Cormorant Garamond", "Noto Serif TC", "Source Han Serif TC", "Songti TC", serif;
   --font-zh: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
-  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  /* 英文用 Inter，中文一律落到思源宋體（Inter 沒有中文字，瀏覽器會自動改用下一個字體） */
+  --font-sans: "Inter", "Helvetica Neue", Arial, "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Serif TC", "Songti TC", monospace;
 }
 
 /* ---------- 基礎 ---------- */
