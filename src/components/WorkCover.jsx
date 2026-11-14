@@ -54,6 +54,7 @@ function GeneratedCover({ motif, code, large }) {
         {motif === 'lattice' && <Lattice />}
         {motif === 'void' && <Void />}
         {motif === 'phone' && <Phone />}
+        {motif === 'chairs' && <Chairs />}
         {(!motif || motif === 'door') && <Door />}
       </g>
 
@@ -174,6 +175,19 @@ function Phone() {
       {[0, 1, 2, 3].map((i) => (
         <rect key={i} x={170 + (i % 2) * 32} y={126 + Math.floor(i / 2) * 32} width="28" height="26" rx="5" fill="none" stroke="var(--mp-line)" strokeWidth="1" />
       ))}
+    </>
+  )
+}
+
+/* 愛的未完成式：相對的兩張椅子，中間一條沒有打結的線 */
+function Chairs() {
+  return (
+    <>
+      <path d="M120 70 V190 M120 140 H170 V190 M120 140 V70" fill="none" stroke={bronze} strokeWidth="0.9" />
+      <path d="M280 70 V190 M280 140 H230 V190" fill="none" stroke={bronze} strokeWidth="0.9" />
+      <line x1="108" y1="190" x2="292" y2="190" stroke="var(--mp-line)" strokeWidth="1" />
+      <path d="M170 128 C 185 108, 196 140, 199 124" fill="none" stroke={stroke} strokeWidth="1" />
+      <path d="M230 128 C 215 148, 206 112, 203 126" fill="none" stroke={stroke} strokeWidth="1" />
     </>
   )
 }

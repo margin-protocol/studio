@@ -16,6 +16,7 @@ export const links = {
   lexnote: 'https://margin-protocol.github.io/lexnote/',
   null: 'https://margin-protocol.github.io/null/',
   seventhRegistry: 'https://margin-protocol.github.io/seventh-marriage-registry/',
+  theUnfinishedLove: 'https://margin-protocol.github.io/the-unfinished-love/',
 
   // 手機小工具介紹在岔頁的工具頁
   phoneWidget: 'https://margin-protocol.github.io/Off-Page/tools.html#tool-widget',

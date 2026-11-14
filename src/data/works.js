@@ -17,7 +17,7 @@
  *   linkKey      外部連結代號，網址寫在 src/config/links.js
  *   cover        封面圖片路徑，例如 '/covers/little-days.webp'（放在 public/covers/）
  *                填 null 時使用程式產生的幾何封面
- *   motif        幾何封面圖樣：'calendar' | 'pages' | 'lattice' | 'void' | 'door'
+ *   motif        幾何封面圖樣：'calendar' | 'pages' | 'lattice' | 'void' | 'door' | 'phone' | 'chairs'
  *   featured     是否顯示在首頁精選
  */
 
@@ -135,6 +135,26 @@ export const works = [
     cover: null,
     motif: 'phone',
     featured: false,
+  },
+  {
+    id: 'the-unfinished-love',
+    code: 'MP-007',
+    title: '愛的未完成式',
+    subtitle: 'THE UNFINISHED LOVE',
+    category: 'narrative',
+    status: 'live',
+    releaseDate: null,
+    summary: '離婚協議書已經放在桌上，但還沒有人簽名。一場關於婚姻、選擇與告別的 AI 互動敘事。',
+    description: [
+      '《愛的未完成式》是一部以婚姻、離婚協商與關係選擇為核心的 AI 互動敘事。故事開始於一份尚未簽署的離婚協議書：你可以試著修復，也可以選擇離開。',
+      '婚姻的背景由你自己設定，透過自由對話與角色互動推進故事。對方有自己的意志，可以接受、拒絕、猶豫，或提出自己的條件；故事不保證復合，也沒有預先寫好的結局。',
+      '家務、經濟、承諾與那些沒有說出口的事情，都是婚姻的一部分。作品於 ChelizAI 遊玩。',
+    ],
+    tags: ['婚姻', '離婚協商', '互動敘事', 'AI 互動', 'ChelizAI', 'narrative'],
+    linkKey: 'theUnfinishedLove',
+    cover: null,
+    motif: 'chairs',
+    featured: true,
   },
 ]
 
