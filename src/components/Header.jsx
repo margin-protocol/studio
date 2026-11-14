@@ -45,7 +45,7 @@ export default function Header() {
           <span className="font-serif text-lg tracking-[0.12em] text-fg sm:text-xl">
             MARGIN PROTOCOL<span className="text-mist">.</span>
           </span>
-          <span className="zh-title hidden text-xs text-muted sm:inline">頁邊協定</span>
+          <span className="hidden text-xs tracking-[0.2em] text-muted sm:inline">頁邊協定</span>
         </Link>
 
         <nav aria-label="主選單" className="hidden md:block">
@@ -116,7 +116,7 @@ export default function Header() {
                   >
                     <span className="file-code text-bronze">{item.code}</span>
                     <span className="file-code">{item.label}</span>
-                    <span className="zh-title ml-auto text-sm">{item.labelZh}</span>
+                    <span className="ml-auto text-sm">{item.labelZh}</span>
                   </NavLink>
                 </li>
               ))}

@@ -54,10 +54,7 @@ export default function Archive() {
   return (
     <Page>
       <PageHeading code="01" title="ARCHIVE" titleZh="作品檔案館">
-        <p>
-          每一份檔案都是一件作品。依分類篩選，或輸入關鍵字檢索。
-          尚未完成的作品會如實標示狀態。
-        </p>
+        <p>每一份檔案都是一件作品。依分類篩選，或輸入關鍵字檢索。</p>
       </PageHeading>
 
       <section aria-label="檢索條件" className="sticky top-16 z-30 border-b border-line bg-bg/85 backdrop-blur-md">
@@ -109,11 +106,11 @@ export default function Archive() {
 
       <section aria-label="作品列表" className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <p className="file-code mb-8 text-muted" aria-live="polite">
-          RESULTS — 共 {results.length} 份檔案
+          共 {results.length} 份檔案
         </p>
 
         {results.length > 0 ? (
-          <motion.ul layout className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.ul layout className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {results.map((work) => (
                 <motion.li

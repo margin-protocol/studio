@@ -104,9 +104,9 @@
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
 
-  /* 檔案編號標籤 */
+  /* 小字標籤（檔案編號、分類、狀態、按鈕文字）——統一使用正文無襯線字 */
   .file-code {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;

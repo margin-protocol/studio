@@ -21,7 +21,7 @@ const articles = [
     en: 'Technology is more than function.',
     body: [
       '一段程式可以只是解決問題，也可以是一種語氣。按鈕何時出現、文字以什麼速度浮現，都是寫作的一部分。',
-      '我們把系統當成文體來設計：精確，但不冷漠。',
+      '我們把系統當成文體來設計。',
     ],
   },
   {
@@ -59,7 +59,7 @@ export default function Manifesto() {
           transition={{ delay: 0.3, duration: 1.2 }}
         >
           <span className="file-code text-bronze">PREAMBLE ／ 序</span>
-          <p className="zh-title mt-6 text-2xl leading-relaxed sm:text-3xl sm:leading-relaxed">{site.motto}</p>
+          <p className="zh-title mt-6 text-xl leading-relaxed sm:text-2xl md:whitespace-nowrap">{site.motto}</p>
           <footer className="mt-6 font-serif text-lg italic text-muted">{site.taglineEn}</footer>
         </motion.blockquote>
 

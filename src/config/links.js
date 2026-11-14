@@ -13,8 +13,13 @@ export const links = {
   // GitHub 帳號 margin-protocol（2026-11 由 xia-mumu 改名）
   offPage: 'https://margin-protocol.github.io/Off-Page/',
 
-  lexnote: null,
-  null: null,
+  lexnote: 'https://margin-protocol.github.io/lexnote/',
+  null: 'https://margin-protocol.github.io/null/',
+  seventhRegistry: 'https://margin-protocol.github.io/seventh-marriage-registry/',
+
+  // 手機小工具、電腦桌寵：目前沒有公開頁面，有網址時填入即可
+  phoneWidget: null,
+  desktopPet: null,
 }
 
 /** 依 linkKey 取得網址；找不到或為 null 時回傳 null */

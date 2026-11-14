@@ -15,7 +15,7 @@ export default function Footer() {
           <p className="font-serif text-2xl tracking-[0.12em]">
             MARGIN PROTOCOL<span className="text-mist">.</span>
           </p>
-          <p className="zh-title mt-1 text-sm text-muted">頁邊協定</p>
+          <p className="mt-1 text-sm tracking-[0.2em] text-muted">頁邊協定</p>
           <p className="mt-6 max-w-sm font-serif text-lg italic text-muted">{site.taglineEn}</p>
         </div>
 

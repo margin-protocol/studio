@@ -68,7 +68,7 @@ export default function IntroOverlay() {
             {lines.map((line, i) => (
               <motion.p
                 key={line}
-                className="file-code text-muted"
+                className="file-code font-mono text-muted"
                 initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.15 + i * 0.28, duration: 0.35 }}
@@ -77,7 +77,7 @@ export default function IntroOverlay() {
               </motion.p>
             ))}
             <motion.p
-              className="file-code mt-6 text-fg"
+              className="file-code mt-6 font-mono text-fg"
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0.55, 1] }}
               transition={{ delay: 1, duration: 0.6 }}

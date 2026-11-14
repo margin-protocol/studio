@@ -28,14 +28,14 @@ export default function WorkCard({ work, headingLevel = 'h3' }) {
             <StatusBadge status={work.status} showZh={false} />
           </div>
 
-          <Heading className="mt-4 flex items-baseline gap-3">
+          <Heading className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <Link
               to={`/archive/${work.id}`}
-              className="font-serif text-2xl tracking-wide after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
+              className="shrink-0 font-serif text-2xl tracking-wide after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
             >
               {work.title}
             </Link>
-            {work.subtitle && <span className="zh-title text-sm text-muted">{work.subtitle}</span>}
+            {work.subtitle && <span className="text-sm text-muted">{work.subtitle}</span>}
           </Heading>
 
           <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{work.summary}</p>

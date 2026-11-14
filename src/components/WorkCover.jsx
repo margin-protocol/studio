@@ -53,14 +53,10 @@ function GeneratedCover({ motif, code, large }) {
         {motif === 'pages' && <Pages />}
         {motif === 'lattice' && <Lattice />}
         {motif === 'void' && <Void />}
+        {motif === 'phone' && <Phone />}
         {(!motif || motif === 'door') && <Door />}
       </g>
 
-      {!large && (
-        <text x="16" y="236" fill={bronze} fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="2">
-          {code}
-        </text>
-      )}
     </svg>
   )
 }
@@ -162,6 +158,22 @@ function Void() {
       <circle cx="200" cy="124" r="16" fill="none" stroke={fg} strokeOpacity="0.8" strokeWidth="1" />
       <line x1="186" y1="140" x2="214" y2="108" stroke={fg} strokeOpacity="0.8" strokeWidth="1" />
       <line x1="60" y1="124" x2="340" y2="124" stroke={stroke} strokeOpacity="0.35" strokeWidth="0.6" strokeDasharray="1 5" />
+    </>
+  )
+}
+
+/* 手機小工具：手機外框與主畫面上的小工具 */
+function Phone() {
+  return (
+    <>
+      <rect x="160" y="30" width="80" height="190" rx="12" fill="none" stroke={bronze} strokeWidth="0.9" />
+      <line x1="188" y1="40" x2="212" y2="40" stroke={bronze} strokeWidth="0.9" />
+      <rect x="170" y="56" width="60" height="60" rx="6" fill={stroke} fillOpacity="0.35" stroke={stroke} strokeWidth="0.9" />
+      <circle cx="200" cy="80" r="9" fill="none" stroke={fg} strokeOpacity="0.7" strokeWidth="0.9" />
+      <path d="M186 106 q14 -14 28 0" fill="none" stroke={fg} strokeOpacity="0.7" strokeWidth="0.9" />
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={170 + (i % 2) * 32} y={126 + Math.floor(i / 2) * 32} width="28" height="26" rx="5" fill="none" stroke="var(--mp-line)" strokeWidth="1" />
+      ))}
     </>
   )
 }

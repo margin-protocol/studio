@@ -5,7 +5,6 @@ import { ArrowRight, Mail } from 'lucide-react'
 import Page from '../components/Page.jsx'
 import LogoMark from '../components/LogoMark.jsx'
 import WorkCard from '../components/WorkCard.jsx'
-import { navItems } from '../components/navigation.js'
 import { works } from '../data/works.js'
 import { site } from '../config/site.js'
 import { usePageMeta } from '../hooks/usePageMeta.js'
@@ -35,7 +34,7 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-20 pt-16 sm:px-8 md:grid-cols-[1.35fr_1fr] md:pb-28 md:pt-24">
           <div>
             <motion.p className="file-code text-bronze" {...rise(0.1)}>
-              FILE 00 <span className="mx-2 text-line">/</span> ENTRANCE
+              FILE 00
             </motion.p>
 
             <h1 id="hero-title" className="mt-6">
@@ -86,31 +85,8 @@ export default function Home() {
               aria-hidden="true"
             />
             <LogoMark animated className="relative h-auto w-full" />
-            <p className="file-code mt-6 text-center text-bronze" aria-hidden="true">ACCESS / 00</p>
           </div>
         </div>
-      </section>
-
-      {/* ---------- 目錄 ---------- */}
-      <section aria-labelledby="index-title" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <h2 id="index-title" className="file-code text-bronze">INDEX ／ 檔案目錄</h2>
-        <ol className="mt-6 border-t border-line">
-          {navItems.slice(1).map((item, i) => (
-            <motion.li key={item.to} className="border-b border-line" {...reveal} transition={{ ...reveal.transition, delay: i * 0.06 }}>
-              <Link to={item.to} className="group flex items-baseline gap-5 py-5 transition-colors hover:bg-card/40 sm:px-3">
-                <span className="file-code w-8 text-bronze">{item.code}</span>
-                <span className="font-serif text-2xl tracking-[0.08em] sm:text-3xl">{item.label}</span>
-                <span className="zh-title hidden text-muted sm:inline">{item.labelZh}</span>
-                <ArrowRight
-                  size={18}
-                  strokeWidth={1.25}
-                  className="ml-auto -translate-x-2 text-muted opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:opacity-100"
-                  aria-hidden="true"
-                />
-              </Link>
-            </motion.li>
-          ))}
-        </ol>
       </section>
 
       {/* ---------- 精選作品 ---------- */}
@@ -124,7 +100,7 @@ export default function Home() {
             查看全部 <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>
-        <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((work, i) => (
             <motion.li key={work.id} {...reveal} transition={{ ...reveal.transition, delay: i * 0.1 }}>
               <WorkCard work={work} />
@@ -141,10 +117,9 @@ export default function Home() {
             <h2 id="about-title" className="zh-title mt-2 text-3xl">關於頁邊協定</h2>
           </div>
           <div className="prose-mp max-w-xl text-muted">
-            <p className="zh-title text-xl leading-relaxed text-fg">「{site.motto}」</p>
+            <p className="zh-title text-lg leading-relaxed text-fg sm:text-xl lg:whitespace-nowrap">「{site.motto}」</p>
             <p>
-              MARGIN PROTOCOL. 是一間獨立創作工作室，在文學、互動敘事、藝術設計與創意程式之間工作。
-              我們寫故事，也寫讓故事運作的系統；做工具，也讓工具帶著一點溫度。
+              MARGIN PROTOCOL. 是一間獨立創作工作室，在文學、互動敘事、藝術設計與創意程式之間工作。我們寫故事，也寫讓故事運作的系統；做工具，也讓工具帶著一點溫度。
             </p>
             <p>
               頁邊，是書頁上留給註記、疑問與另一種讀法的位置。我們把作品放在那裡。
