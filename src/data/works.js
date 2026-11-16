@@ -19,6 +19,7 @@
  *   cover        封面圖片路徑，例如 '/covers/little-days.webp'（放在 public/covers/）
  *                填 null 時使用程式產生的幾何封面
  *   motif        幾何封面圖樣：'calendar' | 'pages' | 'lattice' | 'void' | 'door' | 'phone' | 'chairs'
+ *   gallery      作品圖集（可省略）：[{ src: '/works/<id>/01.webp', alt: '圖片說明' }]，圖片放在 public/works/<id>/
  *   featured     是否顯示在首頁精選
  */
 
@@ -159,6 +160,35 @@ export const works = [
     cover: null,
     motif: 'chairs',
     featured: true,
+  },
+  {
+    id: 'siang-collector',
+    code: 'MP-008',
+    title: '小湘收集器',
+    subtitle: 'SIANG COLLECTOR',
+    category: 'digital-product',
+    status: 'personal',
+    releaseDate: null,
+    summary: '兩個人的收集遊戲。一個人孵蛋，一個人寫紙條。',
+    description: [
+      '小湘收集器是為兩個人做的收藏養成 PWA。一個人孵恐龍蛋、收集六十一位小湘；另一個人出題、審核照片、寫紙條。',
+      '遊戲和現實綁在一起：每天三個願望，要拍下指定的顏色；走到哪個縣市，那裡的小湘才會出現；下雨的日子會多一顆天氣蛋，見面的那天掃一下對方的手機，會收到約會蛋。',
+      '小湘也可以被派出門，到便利商店、夜市、海邊或更遠的地方，帶回化石、布丁和一張家鄉的明信片。這是私人作品，目前不對外開放。',
+    ],
+    tags: ['收集', '養成', '兩人遊戲', '恐龍蛋', 'PWA', 'game'],
+    cover: '/covers/siang-collector.webp',
+    motif: 'door',
+    gallery: [
+      { src: '/works/siang-collector/01.webp', alt: '封面：小湘收集器，兩個人的收集遊戲' },
+      { src: '/works/siang-collector/02.webp', alt: '孵化：把能量一點一點注入，等她自己破殼' },
+      { src: '/works/siang-collector/03.webp', alt: '收集：六十一位小湘' },
+      { src: '/works/siang-collector/04.webp', alt: '願望：每天三個願望，拍下指定的顏色' },
+      { src: '/works/siang-collector/05.webp', alt: '出門：派小湘到便利商店、夜市、海邊或遠行' },
+      { src: '/works/siang-collector/06.webp', alt: '現實：縣市探索、天氣蛋與約會蛋' },
+      { src: '/works/siang-collector/07.webp', alt: '紙條：她寫的紙條' },
+      { src: '/works/siang-collector/08.webp', alt: '結尾：今天，也孵一顆蛋吧' },
+    ],
+    featured: false,
   },
 ]
 

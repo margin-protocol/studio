@@ -18,6 +18,11 @@ function formatDate(iso) {
   return d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
+/** public/ 底下的圖片路徑要接上網站的 base（GitHub Pages 是 /studio/） */
+function asset(path) {
+  return path.startsWith('/') ? import.meta.env.BASE_URL + path.slice(1) : path
+}
+
 export default function WorkDetail() {
   const { id } = useParams()
   const work = getWork(id)
@@ -139,6 +144,25 @@ export default function WorkDetail() {
               </div>
             </aside>
           </div>
+
+          {work.gallery?.length > 0 && (
+            <section className="border-t border-line p-6 sm:p-10" aria-label="作品圖集">
+              <h2 className="file-code mb-4 text-bronze">GALLERY</h2>
+              <ul className="flex snap-x gap-4 overflow-x-auto pb-3">
+                {work.gallery.map((g) => (
+                  <li key={g.src} className="w-56 shrink-0 snap-start sm:w-64">
+                    <img
+                      src={asset(g.src)}
+                      alt={g.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[9/16] w-full border border-line object-cover"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
       </motion.article>
 
