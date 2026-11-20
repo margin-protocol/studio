@@ -124,6 +124,14 @@ export default function WorkDetail() {
                     <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                     <span className="sr-only">（另開新視窗）</span>
                   </a>
+                ) : work.requestPlay ? (
+                  <Link
+                    to="/contact"
+                    className="group inline-flex w-full items-center justify-between border border-fg/80 bg-fg px-5 py-3 text-bg transition-colors hover:bg-transparent hover:text-fg"
+                  >
+                    <span className="ui-zh">索取遊玩連結</span>
+                    <ArrowRight size={16} strokeWidth={1.5} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </Link>
                 ) : (
                   <p className="border border-dashed border-line px-5 py-3 text-sm text-muted">
                     <span className="file-code mr-2 text-bronze">LINK</span>外部連結尚未開放
@@ -188,17 +196,17 @@ export default function WorkDetail() {
               {work.closing && (
                 <div className="mt-16 border-t border-line pt-10 text-center">
                   <p className="font-serif text-2xl tracking-wide sm:text-3xl">{work.closing}</p>
-                  {url && (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group mt-6 inline-flex items-center gap-3 border border-mist/70 px-5 py-3 text-fg transition-colors hover:border-mist hover:bg-mist/15"
-                    >
-                      <span className="ui-zh">手機打開就能玩</span>
-                      <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" />
-                      <span className="sr-only">（另開新視窗）</span>
-                    </a>
+                  {work.requestPlay && (
+                    <>
+                      <p className="mt-3 text-muted">目前採索取連結遊玩</p>
+                      <Link
+                        to="/contact"
+                        className="group mt-6 inline-flex items-center gap-3 border border-mist/70 px-5 py-3 text-fg transition-colors hover:border-mist hover:bg-mist/15"
+                      >
+                        <span className="ui-zh">索取遊玩連結</span>
+                        <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+                      </Link>
+                    </>
                   )}
                 </div>
               )}

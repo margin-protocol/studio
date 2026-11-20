@@ -17,7 +17,6 @@ export const links = {
   null: 'https://margin-protocol.github.io/null/',
   seventhRegistry: 'https://margin-protocol.github.io/seventh-marriage-registry/',
   theUnfinishedLove: 'https://margin-protocol.github.io/the-unfinished-love/',
-  siangCollector: 'https://margin-protocol.github.io/dinosaur-collector/',
 
   // 手機小工具介紹在岔頁的工具頁
   phoneWidget: 'https://margin-protocol.github.io/Off-Page/tools.html#tool-widget',

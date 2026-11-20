@@ -24,6 +24,7 @@ export const statuses = {
   prototype: { label: '原型測試', en: 'PROTOTYPE', tone: 'dev' },
   reserved: { label: '資料保留中', en: 'RESERVED', tone: 'pending' },
   personal: { label: '個人使用中', en: 'IN USE', tone: 'dev' },
+  invite: { label: '索取連結遊玩', en: 'BY REQUEST', tone: 'live' },
 }
 
 export function getCategory(id) {
