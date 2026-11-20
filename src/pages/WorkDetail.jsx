@@ -145,6 +145,66 @@ export default function WorkDetail() {
             </aside>
           </div>
 
+          {work.video && (
+            <section className="border-t border-line p-6 sm:p-10" aria-label="介紹影片">
+              <h2 className="file-code mb-4 text-bronze">FILM</h2>
+              <video
+                src={asset(work.video.src)}
+                poster={work.video.poster ? asset(work.video.poster) : undefined}
+                controls
+                playsInline
+                preload="none"
+                aria-label={work.video.label}
+                className="mx-auto aspect-[9/16] w-full max-w-xs border border-line bg-bg object-cover"
+              />
+            </section>
+          )}
+
+          {work.chapters?.length > 0 && (
+            <section className="border-t border-line p-6 sm:p-10" aria-label="作品介紹">
+              <h2 className="file-code mb-8 text-bronze">CHAPTERS</h2>
+              <ol className="space-y-14 sm:space-y-20">
+                {work.chapters.map((c, i) => (
+                  <li
+                    key={c.title}
+                    className={`grid items-center gap-6 sm:gap-12 ${i % 2 ? 'sm:grid-cols-[1fr_minmax(0,15rem)]' : 'sm:grid-cols-[minmax(0,15rem)_1fr]'}`}
+                  >
+                    <img
+                      src={asset(c.image)}
+                      alt={`${c.title}：${c.lead}`}
+                      loading="lazy"
+                      decoding="async"
+                      className={`mx-auto aspect-[9/16] w-48 border border-line object-cover sm:w-full ${i % 2 ? 'sm:order-2' : ''}`}
+                    />
+                    <div className={i % 2 ? 'sm:order-1 sm:text-right' : ''}>
+                      <p className="file-code text-mist">— {String(i + 1).padStart(2, '0')} —</p>
+                      <h3 className="mt-2 font-serif text-3xl tracking-wide">{c.title}</h3>
+                      <p className="mt-2 text-muted">{c.lead}</p>
+                      <p className="mt-4 leading-loose">{c.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              {work.closing && (
+                <div className="mt-16 border-t border-line pt-10 text-center">
+                  <p className="font-serif text-2xl tracking-wide sm:text-3xl">{work.closing}</p>
+                  {url && (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group mt-6 inline-flex items-center gap-3 border border-mist/70 px-5 py-3 text-fg transition-colors hover:border-mist hover:bg-mist/15"
+                    >
+                      <span className="ui-zh">手機打開就能玩</span>
+                      <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" />
+                      <span className="sr-only">（另開新視窗）</span>
+                    </a>
+                  )}
+                </div>
+              )}
+            </section>
+          )}
+
           {work.gallery?.length > 0 && (
             <section className="border-t border-line p-6 sm:p-10" aria-label="作品圖集">
               <h2 className="file-code mb-4 text-bronze">GALLERY</h2>
