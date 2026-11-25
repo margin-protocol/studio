@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router'
+import { Link, Navigate, useParams } from 'react-router'
 import { motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 
@@ -29,6 +29,7 @@ export default function WorkDetail() {
   usePageMeta(work ? `${work.code} ${work.title}` : '找不到檔案', work?.summary)
 
   if (!work) return <NotFound />
+  if (work.id !== id) return <Navigate to={`/archive/${work.id}`} replace />
 
   const cat = getCategory(work.category)
   const url = getLink(work.linkKey)
@@ -146,7 +147,7 @@ export default function WorkDetail() {
                   >
                     <span className="ui-zh">前往遊玩</span>
                     <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
-                    <span className="sr-only">（另開新視窗，前往 ChelizAI）</span>
+                    <span className="sr-only">{playUrl.includes('cheliz.ai') ? '（另開新視窗，前往 ChelizAI）' : '（另開新視窗）'}</span>
                   </a>
                 )}
               </div>

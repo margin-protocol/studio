@@ -284,6 +284,19 @@ write(
   }),
 )
 
+/* ---------- 作品改名後的舊網址（works.js 的 aliases）→ 轉到新網址 ---------- */
+
+for (const w of works) {
+  for (const alias of w.aliases ?? []) {
+    const to = url(`archive/${w.id}/`)
+    write(
+      `archive/${alias}/index.html`,
+      `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="utf-8"><title>${esc(w.title)}｜${esc(site.name)}</title><link rel="canonical" href="${to}"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=${to}"></head><body><p><a href="${to}">${esc(w.title)}</a></p></body></html>
+`,
+    )
+  }
+}
+
 /* ---------- sitemap.xml ---------- */
 
 const priority = (p) => (p === '' ? '1.0' : p === 'archive/' ? '0.9' : p.startsWith('archive/') ? '0.8' : '0.6')
